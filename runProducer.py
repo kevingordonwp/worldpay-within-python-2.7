@@ -64,8 +64,30 @@ def run():
         prices = {}
         prices[ccPrice.getId()] = ccPrice
         svc.setPrices(prices)
-        # [ CLIENT KEY, SERVICE KEY] : From online.worldpay.com
-        wpw.initProducer({"psp_name":"securenet","developer_id":"12345678", "secure_key": "<secure_key>", "api_endpoint":"https://gwapi.demo.securenet.com/api/", "public_key": "<public_key>", "secure_net_id":"<secure_net_id>", "app_version":"0.1", "merchant_client_key": "<public_key>", "merchant_service_key": "<secure_key>","hte_public_key":"<public_key>", "hte_private_key": "<secure_key>"})
+        
+
+        ####################################################
+        # For Worldpay online.worldpay.com - UNCOMMENT BELOW
+        ####################################################
+        # clientKey = "<client-key>"
+        # serviceKey = "<service-key>"
+        # apiEndpoint = "https://api.worldpay.com/v1"
+        # onlineWordpayCredentials = {"psp_name":"worldpayonlinepayments","hte_public_key":clientKey, "hte_private_key": serviceKey, "api_endpoint":apiEndpoint, "merchant_client_key": clientKey, "merchant_service_key": serviceKey}
+        # producerCredentials = onlineWordpayCredentials
+        ####################################################
+
+        ####################################################
+        # For Worldpay Total / Securenet - UNCOMMENT BELOW
+        ####################################################
+        # secureNetId = "<securenetid>"
+        # secureKey = "<secure-key>"
+        # publicKey = "<public-key>"
+        # apiEndpoint = "https://api.worldpay.com/v1"
+        # securenetCredentials = {"psp_name":"securenet","developer_id":"12345678", "secure_key": secureKey, "api_endpoint":apiEndpoint, "public_key": publicKey, "secure_net_id":secureNetId, "app_version":"0.1", "merchant_client_key": publicKey, "merchant_service_key": secureKey,"hte_public_key":publicKey, "hte_private_key": secureKey}
+        # producerCredentials = securenetCredentials
+        ####################################################
+
+        wpw.initProducer(producerCredentials)
         wpw.addService(svc)
         broadcastDuration = 20000
         durationSeconds = broadcastDuration / 1000
