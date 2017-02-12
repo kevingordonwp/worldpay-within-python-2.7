@@ -30,6 +30,8 @@ def detectHostArchitecture():
             return "ARM32"
         elif "x86" in arch.lower():
             return "IA32"
+        elif "32" in arch.lower():
+            return "IA32"
         else:
             return "UNKNOWN"
 
