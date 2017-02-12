@@ -5,7 +5,7 @@ def detectHostOS():
         hostOS = platform.system().lower()
         if hostOS is None or len(hostOS) == 0:
             return "UNKNOWN"
-        elif "darwin" in hostOS.lower() or "mac" in hostOS.toLowerCase():
+        elif "darwin" in hostOS.lower() or "mac" in hostOS.lower():
             return "MAC"
         elif "win" in hostOS.lower():
             return "WINDOWS"
