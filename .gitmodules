@@ -1,0 +1,3 @@
+[submodule "worldpay-within-rpc-agent-bins"]
+	path = worldpay-within-rpc-agent-bins
+	url = https://github.com/kevingordonwp/worldpay-within-rpc-agent-bins
